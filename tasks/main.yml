@@ -25,6 +25,7 @@
     to_ip: "{{ item.to_ip | default(omit) }}"
     to_port: "{{ item.to_port | default(omit) }}"
   with_items: "{{ ufw_rules }}"
+# shell: ufw allow from ip to any port 22 proto tcp
 
 - name: Configuring application rules
   ufw:
